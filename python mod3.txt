@@ -1,0 +1,904 @@
+JUNE 2022                                                                                                                                                                                                                            1.list Three Image Processing Python Libraries
+
+1. OpenCV (cv2) – A powerful library for real-time image and video processing. It supports image transformations, filtering, edge detection, and face recognition.
+
+
+2. Pillow (PIL) – A user-friendly library for opening, manipulating, and saving various image file formats such as JPEG, PNG, and BMP.
+
+
+3. Scikit-Image – A collection of image processing algorithms for tasks like feature extraction, segmentation, and color manipulation.
+
+
+
+
+
+2. Steps to Create a GUI Application Using Tkinter
+
+1. Import Tkinter
+
+import tkinter as tk
+
+
+2. Create the main window
+
+root = tk.Tk()
+root.title("My GUI App")
+
+
+3. Set window size (optional)
+
+root.geometry("400x300")
+
+
+4. Add widgets (like labels, buttons, and text fields)
+
+label = tk.Label(root, text="Hello, Tkinter!")
+label.pack()
+
+
+5. Add interactivity with functions and buttons
+
+def say_hello():
+    print("Button clicked!")
+
+button = tk.Button(root, text="Click Me", command=say_hello)
+button.pack()
+
+
+6. Run the Tkinter event loop
+
+root.mainloop()
+
+
+
+This creates a basic GUI with a label and a button.                                                                                                                                                                                                3 (a) How to Draw a Star Shape Using Turtle in Python
+
+To draw a star using the turtle module, you can use the following Python code:
+
+import turtle
+
+def draw_star(size):
+    star = turtle.Turtle()
+    star.speed(3)
+    
+    for _ in range(5):
+        star.forward(size)
+        star.right(144)  # Angle to create a star
+    
+    turtle.done()
+
+draw_star(100)  # Call function with size 100
+
+
+
+
+3 (b) Basic Image Processing with Inbuilt Functions in Python
+
+Image processing in Python can be done using libraries like OpenCV and Pillow. Some basic operations include:
+
+1. Converting to Grayscale:
+
+import cv2
+img = cv2.imread('image.jpg')  # Load an image
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  # Convert to grayscale
+cv2.imshow('Grayscale Image', gray)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+2. Resizing an Image:
+
+resized = cv2.resize(img, (200, 200))
+cv2.imshow('Resized Image', resized)
+
+
+3. Edge Detection (Canny Algorithm):
+
+edges = cv2.Canny(gray, 100, 200)
+cv2.imshow('Edge Detection', edges)
+
+
+
+
+---
+
+4 (a) Python GUI Program to Take Birth Date and Output Age
+
+A simple Tkinter-based GUI to take the birth date and calculate age:
+
+import tkinter as tk
+from datetime import datetime
+
+def calculate_age():
+    birth_year = int(entry.get())
+    current_year = datetime.now().year
+    age = current_year - birth_year
+    result_label.config(text=f"Your age is {age} years")
+
+root = tk.Tk()
+root.title("Age Calculator")
+
+tk.Label(root, text="Enter Birth Year:").pack()
+entry = tk.Entry(root)
+entry.pack()
+
+button = tk.Button(root, text="Calculate Age", command=calculate_age)
+button.pack()
+
+result_label = tk.Label(root, text="")
+result_label.pack()
+
+root.mainloop()
+
+
+
+4 (b) How to Display an Image in Python GUI?
+
+Using Tkinter and Pillow to display an image:
+
+from tkinter import Tk, Label
+from PIL import Image, ImageTk
+
+root = Tk()
+root.title("Image Display")
+
+# Load Image
+image = Image.open("image.jpg")
+photo = ImageTk.PhotoImage(image)
+
+# Display Image
+label = Label(root, image=photo)
+label.pack()
+
+root.mainloop()
+
+
+MAY 2023                                                                                                                                                                                                                                      1) Attributes of a Turtle Object
+
+A turtle object in Python's turtle module has several attributes that control its behavior and appearance. Some key attributes are:
+
+1. position – The current (x, y) coordinate of the turtle.
+
+
+2. heading – The direction in which the turtle is facing (in degrees).
+
+
+3. color – The pen color used to draw lines.
+
+
+4. pensize – The width of the pen used for drawing.
+
+
+5. speed – The movement speed of the turtle (1 to 10, or 0 for fastest).
+
+
+6. isdown – Indicates whether the turtle's pen is down (True) or up (False).
+
+
+7. shape – The shape of the turtle (e.g., "turtle", "arrow", "circle").
+
+
+
+Example Code:
+
+import turtle
+
+t = turtle.Turtle()
+t.shape("turtle")
+t.color("blue")
+t.pensize(3)
+t.speed(5)
+
+print("Position:", t.position())  # Get current position
+print("Heading:", t.heading())    # Get current direction
+print("Color:", t.color())        # Get pen color
+print("Pen Size:", t.pensize())   # Get pen size
+
+
+
+2) Advantages of GUI-based Programs over Terminal-based Programs
+
+Graphical User Interfaces (GUIs) provide several advantages over Command Line Interfaces (CLIs):
+
+1. User-Friendly – GUIs use buttons, icons, and menus, making them easier to use compared to typing commands.
+
+
+2. Visual Representation – GUIs provide graphical feedback, making applications more interactive.
+
+
+3. Multi-tasking – Users can work with multiple windows at the same time, unlike CLIs which handle one command at a time.
+
+
+4. Faster Learning Curve – Beginners can easily understand and use GUI-based applications without learning specific commands.
+
+
+5. Rich Media Support – GUIs can handle images, videos, and animations, whereas CLIs are text-based.
+
+
+6. Better Accessibility – GUIs support accessibility features like touch input, screen readers, and voice                                                                                 3 (a) Python Program to Draw a Hexagon and Fill it with Red Color
+
+import turtle
+
+# Create turtle object
+t = turtle.Turtle()
+
+# Set the fill color to red
+t.fillcolor("red")
+t.begin_fill()
+
+# Draw a hexagon
+for _ in range(6):
+    t.forward(100)  # Move forward
+    t.left(60)  # Turn left by 60 degrees
+
+t.end_fill()  # Fill the shape
+
+# Hide the turtle and display the window
+t.hideturtle()
+turtle.done()
+
+Explanation of Turtle Methods Used:
+
+fillcolor("red") – Sets the fill color to red.
+
+begin_fill() – Marks the start of filling the shape.
+
+forward(100) – Moves the turtle forward by 100 units.
+
+left(60) – Turns the turtle left by 60 degrees.
+
+end_fill() – Fills the drawn shape with the specified color.
+
+
+
+---
+
+3 (b) Python Program to Convert a Color Image to a Black and White Image
+
+from PIL import Image
+
+# Open an image file
+image = Image.open("color_image.jpg")
+
+# Convert image to grayscale (black & white)
+bw_image = image.convert("L")
+
+# Save the black and white image
+bw_image.save("bw_image.jpg")
+
+# Show the image
+bw_image.show()
+
+Explanation of Image Processing Methods Used:
+
+Image.open("color_image.jpg") – Opens the image file.
+
+convert("L") – Converts the image to grayscale mode.
+
+save("bw_image.jpg") – Saves the new black and white image.
+
+show() – Displays the black and white image.
+
+
+
+
+4 (a) GUI-Based Program for Currency Conversion (INR to Euro & Vice Versa)
+
+import tkinter as tk
+
+def convert_to_euro():
+    inr = float(entry_inr.get())
+    euro = inr * 0.011  # Example conversion rate
+    entry_euro.delete(0, tk.END)
+    entry_euro.insert(0, str(round(euro, 2)))
+
+def convert_to_inr():
+    euro = float(entry_euro.get())
+    inr = euro * 91.0  # Example conversion rate
+    entry_inr.delete(0, tk.END)
+    entry_inr.insert(0, str(round(inr, 2)))
+
+# Create GUI window
+root = tk.Tk()
+root.title("Currency Converter")
+
+# Labels and Entry fields
+tk.Label(root, text="Indian Rupees:").grid(row=0, column=0)
+entry_inr = tk.Entry(root)
+entry_inr.grid(row=0, column=1)
+
+tk.Label(root, text="Euro:").grid(row=1, column=0)
+entry_euro = tk.Entry(root)
+entry_euro.grid(row=1, column=1)
+
+# Buttons
+tk.Button(root, text="Rupees → Euro", command=convert_to_euro).grid(row=2, column=0)
+tk.Button(root, text="Euro → Rupees", command=convert_to_inr).grid(row=2, column=1)
+
+root.mainloop()
+
+Explanation:
+
+The user enters an amount in INR or Euro.
+
+The first button converts INR to Euro.
+
+The second button converts Euro to INR.
+
+tkinter is used for GUI creation.
+
+
+
+---
+
+4 (b) Attributes of a Window and How to Change Them
+
+Attributes of a Window:
+
+1. Title – The title of the window.
+
+
+2. Size (Width × Height) – The dimensions of the window.
+
+
+3. Background Color – The color of the window background.
+
+
+4. Resizable – Whether the window size can be changed.
+
+
+5. Position – The starting position of the window on the screen.
+
+
+
+Changing Attribute Values:
+
+Title: window.title("New Title")
+
+Size: window.geometry("500x300")
+
+Background Color: window.configure(bg="lightblue")
+
+Resizable: window.resizable(False, False)
+
+
+Example Code:
+
+import tkinter as tk
+
+window = tk.Tk()
+window.title("My Window")  
+window.geometry("400x300")  
+window.configure(bg="lightgray")  
+window.resizable(False, False)
+
+window.mainloop()
+
+
+
+
+JUNE 2023
+1)illustrate the following functions
+
+i) turtle.setheading(0)
+
+This command sets the turtle's heading (direction) to 0 degrees, which is East.
+
+The turtle will now face the right side of the screen.
+
+
+ii) turtle.forward(50)
+
+Moves the turtle forward by 50 units in the current direction.
+
+If the turtle was facing East (0 degrees), it moves right by 50 units.
+
+
+iii) turtle.left(90)
+
+Rotates the turtle 90 degrees counterclockwise from its current heading.
+
+If the turtle was facing East (0 degrees), it now faces North (90 degrees).
+
+
+Example Code:
+
+import turtle
+
+t = turtle.Turtle()
+
+t.setheading(0)    
+t.forward(50)      
+t.left(90)         
+t.forward(50)       
+
+turtle.done()
+
+This will draw an L-shaped path where the turtle moves right (East) and then turns upwards (North).
+
+
+
+2.Two Fundamental Differences Between Terminal-Based UIs and GUIs
+
+1. Interaction Method:
+
+Terminal-based UIs require users to type commands (e.g., using a command line).
+
+GUIs allow interaction through buttons, icons, and windows using a mouse or touchscreen.
+
+
+
+2. User Experience:
+
+CLIs are efficient for advanced users but have a steep learning curve.
+
+GUIs are intuitive and accessible for all users, even without technical knowledge
+3.a) Python Function to Draw a Square Using Turtle Graphics
+
+import turtle
+
+def draw_square(side_length):
+    t = turtle.Turtle()
+    
+    for _ in range(4):
+        t.forward(side_length)  # Move forward
+        t.right(90)             # Turn right 90 degrees
+
+    turtle.done()
+
+# Call function to draw a square of side 100 units
+draw_square(100)
+
+
+
+
+
+
+
+
+3(b) Python Function to Convert an Image to Black and White
+
+from PIL import Image
+
+def convert_to_black_white(image_path, output_path):
+    img = Image.open(image_path)  # Open the image
+    bw = img.convert('L')         # Convert to grayscale
+    bw = bw.point(lambda x: 0 if x < 128 else 255, '1')  # Convert to black & white
+    bw.save(output_path)           # Save the new image
+    bw.show()                      # Display the image
+
+# Example usage
+convert_to_black_white('input.jpg', 'output_bw.jpg')
+
+Explanation:
+
+convert('L') converts the image to grayscale.
+
+The point() function applies a threshold (128) to convert grayscale to black (0) and white (255).
+
+
+
+
+4(a) Python Function to Draw a Hexagon Using Turtle Graphics
+
+import turtle
+
+def draw_hexagon(side_length):
+    t = turtle.Turtle()
+    
+    for _ in range(6):
+        t.forward(side_length)  # Move forward
+        t.right(60)             # Turn right 60 degrees
+
+    turtle.done()
+
+draw_hexagon(100)
+
+
+
+
+
+4(b) Python Function to Shrink an Image by a Given Factor
+
+from PIL import Image
+
+def shrink_image(image_path, output_path, factor):
+    img = Image.open(image_path)  # Open the image
+    new_size = (int(img.width / factor), int(img.height / factor))  # Calculate new size
+    shrunk_img = img.resize(new_size, Image.ANTIALIAS)  # Resize image
+    shrunk_img.save(output_path)  # Save resized image
+    shrunk_img.show()  # Display the image
+
+# Example usage
+shrink_image('input.jpg', 'output_small.jpg', 2)
+
+Explanation:
+
+The function shrink_image() divides the width and height by the given factor.
+
+
+
+
+
+JAN 2024
+1) Comment on Event-Driven Programming
+
+Event-driven programming is a programming paradigm where the flow of the program is determined by events such as user interactions, sensor outputs, or messages from other programs. Instead of executing in a linear fashion, an event-driven program waits for events and responds accordingly using event handlers.
+
+Key Features of Event-Driven Programming:
+
+Event Handlers: Functions or methods that execute in response to specific events (e.g., mouse clicks, key presses).
+
+Event Loop: A continuous loop that listens for and dispatches events to the appropriate handlers.
+
+Decoupling of Logic: Event-driven architecture allows different components of a program to react independently to events.
+
+
+Example:
+A GUI application where a button click triggers a specific function is an example of event-driven programming. Programming environments like JavaScript (for web development), Python with Tkinter, and game development frameworks use this paradigm.
+
+
+2) Python Program to Draw a Hexagon using Turtle Graphics
+
+import turtle
+
+
+t = turtle.Turtle()
+t.speed(3)
+
+
+for _ in range(6):
+    t.forward(100)  # Move forward by 100 units
+    t.right(60)     # Turn right by 60 degrees
+
+t.hideturtle()
+turtle.done()
+3(a) Python Program to Convert a Color Image to a Grayscale Image
+
+You can use the OpenCV (cv2) or PIL (Pillow) library to convert an image to grayscale. Here's an example using OpenCV:
+
+import cv2
+
+# Load the color image
+image = cv2.imread('color_image.jpg')  # Replace with your image path
+
+# Convert to grayscale
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+# Save the grayscale image
+cv2.imwrite('grayscale_image.jpg', gray_image)
+
+# Display the grayscale image
+cv2.imshow('Grayscale Image', gray_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+Explanation:
+
+cv2.imread() loads the color image.
+
+cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) converts the image to grayscale.
+
+cv2.imwrite() saves the grayscale image.
+
+cv2.imshow() displays the grayscale image.
+
+
+
+3.b) Attributes and Methods of a Turtle Object
+
+The Turtle module in Python provides attributes and methods to control a turtle object for drawing.
+
+Attributes of a Turtle Object:
+
+1. position - Current position of the turtle.
+
+
+2. heading - Direction the turtle is facing.
+
+
+3. speed - Speed of the turtle (1-10 or "fastest", "slowest").
+
+
+4. color - Color of the turtle's pen and fill.
+
+
+5. pensize - Width of the turtle's pen.
+
+
+
+Methods of a Turtle Object:
+
+1. forward(distance) – Moves the turtle forward.
+
+
+2. backward(distance) – Moves the turtle backward.
+
+
+3. right(angle) – Rotates the turtle clockwise.
+
+
+4. left(angle) – Rotates the turtle counterclockwise.
+
+
+5. penup() / pendown() – Lifts/lowers the pen.
+
+
+6. color(colorname) – Sets the turtle's color.
+
+
+7. goto(x, y) – Moves the turtle to coordinates (x, y).
+
+
+8. clear() – Clears the drawing but keeps the turtle at its position.
+
+
+9. reset() – Resets the entire drawing.
+
+
+10. hideturtle() / showturtle() – Hides/shows the turtle.
+
+
+
+
+4a) Python GUI Program to Concatenate Two Strings When a Button is Pressed
+
+Using Tkinter, we can create a simple GUI to concatenate two input strings.
+
+import tkinter as tk
+
+def concatenate():
+    str1 = entry1.get()
+    str2 = entry2.get()
+    result_label.config(text="Concatenated String: " + str1 + str2)
+
+# Create the main window
+root = tk.Tk()
+root.title("String Concatenation")
+
+# Create input fields
+tk.Label(root, text="Enter first string:").pack()
+entry1 = tk.Entry(root)
+entry1.pack()
+
+tk.Label(root, text="Enter second string:").pack()
+entry2 = tk.Entry(root)
+entry2.pack()
+
+# Button to concatenate strings
+concat_button = tk.Button(root, text="Concatenate", command=concatenate)
+concat_button.pack()
+
+# Label to display result
+result_label = tk.Label(root, text="")
+result_label.pack()
+
+# Run the application
+root.mainloop()
+
+Explanation:
+
+Entry() fields are used to get user input.
+
+The concatenate() function retrieves input values, concatenates them, and updates result_label.
+
+Button() triggers the concatenation when clicked.
+
+
+
+4.b) Types of Window Components and Their Functions
+
+In GUI applications, window components (widgets) are used for user interaction. Here are some common components:
+
+1. Basic Widgets:
+
+Label: Displays static text or images (tk.Label in Tkinter).
+
+Button: A clickable button to trigger events (tk.Button).
+
+Entry: A single-line text input field (tk.Entry).
+
+
+2. Container Widgets:
+
+Frame: A container to group multiple widgets (tk.Frame).
+
+PanedWindow: A resizable split window.
+
+
+3. Selection Widgets:
+
+Checkbutton: A checkbox for multiple selections (tk.Checkbutton).
+
+Radiobutton: Allows selection of one option from multiple choices (tk.Radiobutton).
+
+Listbox: Displays a list of selectable items (tk.Listbox).
+
+
+4. Advanced Widgets:
+
+Text: A multi-line text editor (tk.Text).
+
+Canvas: A widget for drawing shapes and images (tk.Canvas).
+
+
+5. Menu Widgets:
+
+Menu: A dropdown menu for application options (tk.Menu).
+
+Menubutton: A button that displays a menu when clicked.
+
+
+MAY 2024
+
+1. How can you set the drawing speed of the turtle in the Turtle module? Give an example.
+In Python's turtle module, the drawing speed of the turtle can be set using the speed() method. The speed can be a value from 0 to 10, where:
+
+0 means the fastest speed (no animation).
+
+1 is the slowest speed.
+
+10 is the fastest animation speed.
+
+
+Example:
+
+import turtle
+
+t = turtle.Turtle()
+t.speed(5)  # Setting the speed to 5 (moderate speed)
+
+t.forward(100)
+t.right(90)
+t.forward(100)
+turtle.done()
+
+
+2.List the steps to create a GUI application using Tkinter.
+The steps to create a GUI application using Tkinter are:
+
+1. Import Tkinter module
+
+import tkinter as tk
+
+
+2. Create the main application window
+
+root = tk.Tk()
+root.title("My GUI Application")
+
+
+3. Add widgets (buttons, labels, etc.)
+
+label = tk.Label(root, text="Hello, Tkinter!")
+label.pack()
+
+button = tk.Button(root, text="Click Me", command=lambda: print("Button Clicked"))
+button.pack()
+
+
+4. Run the main event loop
+
+root.mainloop()
+
+
+3.a) How to draw a square and hexagon using the turtle module in Python?
+
+import turtle
+t = turtle.Turtle()
+def draw_square():
+    for _ in range(4):
+        t.forward(100)
+        t.right(90)
+
+def draw_hexagon():
+    for _ in range(6):
+        t.forward(100)
+        t.right(60)
+
+draw_square()
+t.penup()
+t.goto(200, 0)
+t.pendown()
+
+
+draw_hexagon()
+
+turtle.done()
+
+
+3b) Describe the methods and Python modules commonly used for converting a color image to a grayscale image.
+
+Python provides multiple ways to convert a color image to grayscale using different libraries:
+
+1. Using OpenCV (cv2):
+
+import cv2
+
+img = cv2.imread('image.jpg')  # Load the image
+gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  # Convert to grayscale
+cv2.imshow('Grayscale Image', gray_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+2. Using Pillow (PIL):
+
+from PIL import Image
+
+img = Image.open('image.jpg')  # Load the image
+gray_img = img.convert('L')  # Convert to grayscale
+gray_img.show()
+
+
+3. Using Matplotlib (matplotlib.pyplot):
+
+import matplotlib.pyplot as plt
+import cv2
+
+img = cv2.imread('image.jpg', cv2.IMREAD_GRAYSCALE)  # Load image in grayscale mode
+plt.imshow(img, cmap='gray')
+plt.show()
+
+
+
+
+4.a) Design a Python GUI program that takes user input for the length and width of a rectangle, and when a button is pressed, calculates and displays the area of the rectangle.
+
+import tkinter as tk
+
+def calculate_area():
+    length = float(entry_length.get())
+    width = float(entry_width.get())
+    area = length * width
+    label_result.config(text=f"Area: {area}")
+
+
+root = tk.Tk()
+root.title("Rectangle Area Calculator")
+
+
+tk.Label(root, text="Length:").grid(row=0, column=0)
+entry_length = tk.Entry(root)
+entry_length.grid(row=0, column=1)
+
+tk.Label(root, text="Width:").grid(row=1, column=0)
+entry_width = tk.Entry(root)
+entry_width.grid(row=1, column=1)
+
+
+btn_calculate = tk.Button(root, text="Calculate", command=calculate_area)
+btn_calculate.grid(row=2, columnspan=2)
+
+
+label_result = tk.Label(root, text="Area: ")
+label_result.grid(row=3, columnspan=2)
+
+root.mainloop()
+
+
+
+4.b) How do you display an image with a caption using Python in a graphical interface?
+
+
+import tkinter as tk
+from PIL import Image, ImageTk
+
+root = tk.Tk()
+root.title("Image with Caption")
+
+
+image = Image.open("image.jpg")
+photo = ImageTk.PhotoImage(image)
+
+
+label_image = tk.Label(root, image=photo)
+label_image.pack()
+
+
+label_caption = tk.Label(root, text="This is an image caption", font=("Arial", 14))
+label_caption.pack()
+
+root.mainloop()
+
+This program loads an image and displays it along with a caption in a Tkinter window.
